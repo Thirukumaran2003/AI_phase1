@@ -1,0 +1,31 @@
+#include<pic.h>
+unsigned int count;
+void main()
+{
+TRISC=0X00;
+OPTION=0X07;
+	while(1)
+	{
+	if(T0IF==1)
+	{
+	T0IF=0;
+	count++;
+	if(RC0==1)
+	{
+		if(count>44)
+		{
+		count=0;
+		RC0=0;
+		}
+	}
+	else
+	{
+	if(count>14)
+	{
+	count=0;
+	RC0=1;
+	}
+	}
+	}
+	}
+}
