@@ -1,0 +1,22 @@
+#include<pic.h>
+unsigned char disp[10]={0X3F,0X06,0X5B,0X4F,0X66,0X6D,0X7C,0X07,0X7F,0X67};
+unsigned char count=0;
+void main()
+{
+TRISB=0;
+ANSEL=ANSELH=0;
+	while(1)
+	{
+	PORTB=disp[count];
+	delay();
+	count++;
+	if(count>9)
+	count=0;
+	}
+}
+
+delay()
+{
+unsigned int i;
+for(i=0;i<50000;i++);
+}
