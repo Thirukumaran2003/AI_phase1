@@ -1,0 +1,27 @@
+#include <pic.h>
+void main()
+{
+TRISB=0X00;
+ANSEL=ANSELH=0X00;
+	while(1)
+	{
+	PORTB=0X81;
+	delay();
+	PORTB=0X42;
+	delay();
+	PORTB=0X24;
+	delay();
+	PORTB=0X18;
+	delay();
+	PORTB=0X24;
+	delay();
+	PORTB=0X42;
+	delay();
+	}
+}
+
+delay()
+{
+unsigned int i;
+for(i=0;i<50000;i++);
+}
